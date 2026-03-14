@@ -1,0 +1,123 @@
+@import url("https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --radius: 0.875rem;
+
+    /* MEDISHARE — Teal Medical Marketplace */
+    --background: 0.97 0.01 200;
+    --foreground: 0.16 0.03 220;
+
+    --card: 1 0 0;
+    --card-foreground: 0.16 0.03 220;
+
+    --popover: 1 0 0;
+    --popover-foreground: 0.16 0.03 220;
+
+    --primary: 0.5 0.15 195;
+    --primary-foreground: 0.99 0 0;
+
+    --secondary: 0.92 0.04 195;
+    --secondary-foreground: 0.35 0.12 195;
+
+    --accent: 0.68 0.16 160;
+    --accent-foreground: 0.99 0 0;
+
+    --muted: 0.94 0.02 200;
+    --muted-foreground: 0.52 0.04 210;
+
+    --destructive: 0.577 0.245 27.325;
+    --destructive-foreground: 0.985 0 0;
+
+    --success: 0.62 0.17 155;
+    --success-foreground: 0.99 0 0;
+
+    --warning: 0.8 0.15 85;
+    --warning-foreground: 0.2 0.04 85;
+
+    --border: 0.9 0.03 200;
+    --input: 0.88 0.03 200;
+    --ring: 0.5 0.15 195;
+
+    --chart-1: 0.5 0.15 195;
+    --chart-2: 0.68 0.16 160;
+    --chart-3: 0.8 0.15 85;
+    --chart-4: 0.65 0.18 30;
+    --chart-5: 0.55 0.15 280;
+
+    --sidebar: 0.5 0.15 195;
+    --sidebar-foreground: 0.99 0 0;
+    --sidebar-primary: 0.72 0.14 195;
+    --sidebar-primary-foreground: 0.99 0 0;
+    --sidebar-accent: 0.38 0.13 195;
+    --sidebar-accent-foreground: 0.99 0 0;
+    --sidebar-border: 0.38 0.13 195;
+    --sidebar-ring: 0.72 0.14 195;
+  }
+
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    font-family: "Bricolage Grotesque", sans-serif;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply bg-white/80 backdrop-blur-sm border border-white/60 shadow-sm;
+  }
+
+  .medicine-card {
+    @apply bg-card rounded-xl border border-border shadow-sm transition-all duration-300 hover:shadow-md hover:-translate-y-0.5;
+  }
+
+  .gradient-hero {
+    background: linear-gradient(
+      135deg,
+      oklch(0.5 0.15 195) 0%,
+      oklch(0.45 0.17 210) 40%,
+      oklch(0.58 0.16 160) 100%
+    );
+  }
+
+  .discount-badge {
+    @apply inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full text-xs font-bold;
+    background: oklch(0.95 0.1 85);
+    color: oklch(0.4 0.14 85);
+  }
+
+  .free-badge {
+    @apply inline-flex items-center gap-0.5 px-2 py-0.5 rounded-full text-xs font-bold;
+    background: oklch(0.92 0.1 155);
+    color: oklch(0.35 0.14 155);
+  }
+
+  .nav-link {
+    @apply flex flex-col items-center gap-0.5 px-3 py-2 rounded-lg text-xs font-medium transition-colors;
+  }
+
+  .nav-link.active {
+    @apply bg-primary/10 text-primary;
+  }
+
+  .nav-link:not(.active) {
+    @apply text-muted-foreground hover:text-foreground;
+  }
+}
